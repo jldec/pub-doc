@@ -1,11 +1,10 @@
 {
-  "name": "pub-doc",
-  "version": "1.1.4",
+  "name": "pub-doc-src",
+  "version": "1.1.5",
   "description": "pub-server doc",
   "main": "pub-config.js",
   "devDependencies": {
-    "pub-server": "^1.9.10",
-    "pub-pkg-prism": "^1.0.0"
+    "pub-server": "^1.9.11"
   },
   "repository": {
     "type": "git",

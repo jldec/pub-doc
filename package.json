@@ -4,7 +4,7 @@
   "description": "pub-server doc",
   "main": "pub-config.js",
   "devDependencies": {
-    "pub-server": "^1.9.11"
+    "pub-server": "^1.9.13"
   },
   "repository": {
     "type": "git",

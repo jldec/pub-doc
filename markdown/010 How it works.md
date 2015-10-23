@@ -50,7 +50,7 @@ Page or fragment objects provide the input "context" for handlebars. E.g. If a t
 Template evaluation is performed in a nested manner
 
 - The outer layout template will include a helper like `{{{renderPage}}}`
-- This invokes an inner page template which may render the page markdown using `{{{html}}}` or it may iterate over page-fragments using a block helper like `{{{#eachFragmentHtml}}}...{{{/eachFragmentHtml}}}`
+- This invokes an inner page template which may render the page markdown using `{{{html}}}` or it may iterate over page-fragments using a block helper like `{{{#eachFragment}}}...{{{/eachFragment}}}`
 
 Templates may be explicitly specified. E.g. to use an outer template called `hero` instead of the default 'main-layout', specify `layout:hero` in the markdown header. Similarly, to use a page layout called `flow`, specify `template:flow` in the markdown header.
 

@@ -1,4 +1,4 @@
-# The page model
+# The Page Model
 
 As mentioned in [](/how-it-works), markdown fragments in source files are parsed into javascript page and fragment objects when the generator is loaded.
 
@@ -24,6 +24,6 @@ This basic structure, which is derived from a very simple text file format, is s
 
 And, by breaking pages into fragments, standard markdown can be used inside fragments, without requiring additional markdown extensions to represent arbitrary layout elements like columns and sections.
 
-Plugins for themes or custom sites may manipulate page objects, creating additional properties for alternative content hierarchies or to classify various types of pages.
+[](/generator-plugins) for themes or custom sites may manipulate page objects, creating additional properties for alternative content hierarchies or to classify various types of pages.
 
 Plugins can also use the page structure to generate menus, sitemaps, and other navigation.

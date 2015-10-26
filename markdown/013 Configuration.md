@@ -15,7 +15,7 @@ A directory with a `pub-config` can also be packaged as a pub-server package or 
 - `staticPaths:` Paths to [Static Files](/static-files)
 - `browserScripts:` Generating [Browser Scripts](/browser-scripts)
 - `generatorPlugins:` [Generator Plugins](/generator-plugins)
-- `serverPlugins:` [Server Config and Plugins](/server-config-and-plugins)
+- `serverPlugins:` [Server Plugins](/server-plugins)
 
 Besides the main path options, the following core server and generator options are recognized.
 

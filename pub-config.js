@@ -27,7 +27,7 @@ var opts = module.exports = {
   ],
 
   staticPaths: [
-    './static',
+    { path:'./static', depth:3, glob:'**/*.{png,pdf,*}'},
     './.gitignore',
     './.nojekyll'
   ],

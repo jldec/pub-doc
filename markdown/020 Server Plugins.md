@@ -1,6 +1,6 @@
 # Server Plugins
 
-Server Plugins are npm modules which extend pub-server's built-in [Web Server features](web-server-configuration). A working example is [pub-pkg-google-oauth](https://github.com/jldec/pub-pkg-google-oauth).
+Server Plugins are npm modules which extend pub-server's built-in [web server](web-server-configuration). A working example is [pub-pkg-google-oauth](https://github.com/jldec/pub-pkg-google-oauth).
 
 Server plugins export a single function which receives an instance of the pubServer object. This function is called once at startup, providing a hook for the plugin to add routes etc.
 

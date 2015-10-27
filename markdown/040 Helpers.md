@@ -7,8 +7,8 @@ HTML helpers should be enclosed in `{{{triple-braces}}}` to avoid html escaping.
 
 ## Markdown HTML
 
-##### `{{{html}}}`
-Returns html for the markdown in the current page or fragment.
+##### `{{{html <text>}}}`
+Returns html for the markdown text or in the current page or fragment.
 
 ##### `{{{fragmentHtml <fragment>}}}`
 Returns html for a named/referenced fragment.
@@ -20,7 +20,6 @@ Returns html without the wrapper div - useful to prevent editing or for containe
 Returns html with fully qualified images and links - useful for HTML exports.
 
 
-
 ## Layout helpers
 
 ##### `{{{renderPage}}}`
@@ -30,13 +29,13 @@ Renders the current page using the template specified in its markdown header (or
 Renders the current page using its layout template - only used with 3-level template nesting.
 
 ##### `{{{injectCss}}}`
-Returns css `<link>` elements for all themes and packages.
+Injects CSS `<link>` elements for all themes and packages.
 
 ##### `{{{injectJs}}}`
-Returns js `<script>` elements for all themes and packages.
+Injects `<script>` elements for all themes and packages, as well as for editor and websockets when necessary.
 
 ##### `{{partial <template>}}`
-Renders the current page with the specified template - useful for composing templates
+Renders the specified template using the same page context as the current page - useful for composing templates
 
 
 
@@ -44,8 +43,7 @@ Renders the current page with the specified template - useful for composing temp
 These are block helpers for repeated template blocks - usage: `{{#helper}}...{{/helper}}`
 
 ##### `{{#eachFragment <prefix>}}`
-Iterates over page fragments starting with prefix. Prefix may be qualified with page url
-to reference the same fragment from layout templates which are shared across pages.
+Iterates over page fragments starting with prefix. Prefix may be qualified with page url to reference the same fragment from layout templates which are shared across pages.
 
 ##### `{{#eachPage}}`
 Iterates over all pages
@@ -83,8 +81,10 @@ it makes sense to wrap these in a helper, e.g. to make the image server configur
 enable hosting both with and without relative paths.
 
 ##### `{{relPath}}`
-Returns relative path prefix for the current page or output file. Only works on output.
-Useful for qualifying hardwired CSS and JS links in layout templates.
+Returns relative path prefix for the current page or output file when output.relPaths is true (affects only static output HTML). Useful for qualifying hardwired CSS and JS links in layout templates.
+
+##### `{{fixPath <href>}}`
+Like {{relPath}} but also handles link rewriting on output with fqImages. Requires href string parameter.
 
 ##### `{{{linkTo <url> <text>}}}`
 Returns link html for the specified url/text - useful when a url is maintained in page metadata.
@@ -108,9 +108,16 @@ Returns link to the previous page at the same level in the URL hierarchy.
 Returns properly qualified `<img src="src" alt="text" title="title">`. If no parameters are passed, this helper
 will try to use `this.image` or `this.icon`. Text and title are optional.
 
+##### `{{{pub-ux}}}`
+Deprecated - use `{{{injectJS}}}` instead.
 
 
-## Simple string helpers
+## Page lists
+
+#### `{{{pageTree <groupBy>, <defaultGroup>}}}`
+Render nested ul-li structure starting at `/`, grouping by <groupBy>. Use <defaultGroup> if <groupBy> has no value. (groupBy and defaultGroup must either both be specified or no args passed). NOTE: result does not include root
+
+## Simple string and number helpers
 
 ##### `{{title}}`
 Returns current page name or title
@@ -120,6 +127,9 @@ Returns opts.key
 
 ##### `{{fragmentID}}`
 Returns current fragment id (without the leading `#`)
+
+##### `{{mod}}`
+Returns frame.data.index % n || 0 inside eachPage or eachFragment e.g. for generating style names.
 
 
 
@@ -169,6 +179,12 @@ Returns date.format('isoDateTime')
 ## Helper utility functions
 The following functions are useful for writing additional helpers in a plugin.
 
+##### `hb.relPath()`
+Function form of {{relPath}}
+
+##### `hb.fixPath(href)`
+Function form of {{fixPath}}
+
 ##### `hb.hbp(<param>)`
 Detects whether a parameter was passed to the helper and returns undefined if not.
 Useful for variadic helpers E.g.
@@ -183,8 +199,3 @@ When `{{date}}` is used without additional parameters, handlebars will pass the 
 context to the helper function as the first parameter. Using hbp() detects this.
 
 `hb` is a reference to generator.handlebars.
-
-
-
-
-

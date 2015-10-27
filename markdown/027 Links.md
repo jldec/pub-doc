@@ -28,7 +28,7 @@ outputs: {
 }
 ```
 
-E.g if markdown is used to generate a file called `/posts/year/month/day.html` and the markdown contains a links to an image at `/static/images/me.jpg`, the generated img src will point to `../../../static/images/me.jpg`.
+E.g if a markdown page `/posts/year/month/day.html` includes an image at `/static/images/me.jpg`, the generated img src will point to `../../../static/images/me.jpg`.
 
 One benefit of using this approach is that the resulting tree of static html files can be hosted at any level. No prior knowledge of the destination directory name is required when the site is generated. This can be helpful for testing or cloning sites.
 
@@ -51,7 +51,7 @@ _NOTE: Using the trailing '/' also affects the way browsers interpret relative l
 
 ## Links in templates
 
-Templates may also include hardwired links to other files in the same site e.g. for CSS stylesheets. For these to receive the same treatment as links in markdown the `{{relPath}}` helper should be used in front of the link e.g.
+Templates may include links to CSS stylesheets etc. For these to receive the same treatment as links in markdown the `{{relPath}}` helper should be used in front of the link e.g.
 
 ```html
 <link rel="icon" href="{{relPath}}/img/favicon.ico" type="image/x-icon">

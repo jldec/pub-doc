@@ -37,7 +37,7 @@ If there is no `pub-config`,  pub-server will also serve static files from the f
 
 Unlike [express](http://expressjs.com/) which reads the file system on each request, pub-server serves static files by scanning static paths on startup, and subsequently serving only those paths which were found in the scan. A watcher can be configured to trigger a re-scan of the path when new files arrive.
 
-This allows pub-server to "mount" many static paths for all the included [](/packages), and to serve single files (like favicons) mounted on root, without stat'ing the file system on each path for each request
+This allows pub-server to "mount" many static paths for all the included [packages](/packages), and to serve single files (like favicons) mounted on root, without stat'ing the file system on each path for each request
 
 For more details see [`server/serve-statics.js`](https://github.com/jldec/pub-server/blob/master/server/serve-statics.js).
 

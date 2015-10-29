@@ -32,6 +32,4 @@ var opts = module.exports = {
     './.nojekyll'
   ],
 
-  injectCss: ['/css/pub-doc.css']
-
 }

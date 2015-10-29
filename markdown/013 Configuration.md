@@ -65,4 +65,4 @@ sources: [{ path:'./markdown' }]
 
 To inspect the fully resolved options while pub-server is running, browse to `/admin/opts`.
 
-`pub -C` will present and similar result on the command line.
+`pub -C` will present a similar result on the command line.

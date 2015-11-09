@@ -13,6 +13,8 @@ A 1-click installer which eliminates the need to pre-install node.js and use the
 npm install -g pub-server
 ```
 
+At this point you can run `pub` from the command line in any directory, to preview your `.md` files.
+
 ### Project-specific install
 
 Instead of depending on a global install, you can add pub-server to your project's package.json.

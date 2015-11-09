@@ -1,10 +1,10 @@
 {
   "name": "pub-doc-src",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "pub-server doc",
   "main": "pub-config.js",
   "devDependencies": {
-    "pub-server": "^1.9.14"
+    "pub-server": "^1.9.16"
   },
   "repository": {
     "type": "git",

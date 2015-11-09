@@ -3,7 +3,7 @@ title: Introduction
 
 # Introduction
 
-pub-server, or __pub__ for short, is a static site generator + editor written in javascript.
+[pub-server](https://github.com/jldec/pub-server), or __pub__ for short, is a static site generator + editor written in javascript.
 
 The following use-cases are supported
 

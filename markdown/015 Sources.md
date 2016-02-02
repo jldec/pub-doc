@@ -15,7 +15,7 @@ These are configured configuring `source.src` with the source module name E.g. '
 The source API is able to glob directories recursively, and return an ordered set of files, optionally matching a glob pattern.
 
 For more information see [pub-src-fs](https://github.com/jldec/pub-src-fs) and
-[pub-src-github](https://github.com/jldec/pub-src-gihub)
+[pub-src-github](https://github.com/jldec/pub-src-github)
 
 [pub-src-redis](https://github.com/jldec/pub-src-redis) can also serve as a cache for other sources.
 

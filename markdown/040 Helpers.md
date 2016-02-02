@@ -108,10 +108,6 @@ Returns link to the previous page at the same level in the URL hierarchy.
 Returns properly qualified `<img src="src" alt="text" title="title">`. If no parameters are passed, this helper
 will try to use `this.image` or `this.icon`. Text and title are optional.
 
-##### `{{{pub-ux}}}`
-Deprecated - use `{{{injectJS}}}` instead.
-
-
 ## Page lists
 
 #### `{{{pageTree <groupBy>, <defaultGroup>}}}`

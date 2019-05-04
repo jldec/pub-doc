@@ -1,6 +1,6 @@
 # Configuration with `pub-config`
 
-By adding a `pub-config` file to a directory, you can control how pub-server processes files, rather than depending on defaults or command-line options. The `pub-config` for this documentation lives [here](https://github.com/jldec/pub-doc-src/blob/master/pub-config.js).
+By adding a `pub-config` file to a directory, you can control how pub-server processes files, rather than depending on defaults or command-line options. The `pub-config` for this documentation lives [here](https://github.com/jldec/pub-doc/blob/master/pub-config.js).
 
 A directory with a `pub-config` can also be packaged as a pub-server package or theme and distributed via npm, making it available for re-use in other projects.
 

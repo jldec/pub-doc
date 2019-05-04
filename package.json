@@ -1,5 +1,5 @@
 {
-  "name": "pub-doc-src",
+  "name": "pub-doc",
   "version": "2.0.0",
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",

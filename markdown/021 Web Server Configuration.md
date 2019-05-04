@@ -11,7 +11,7 @@
 - File-system watchers
 - Websockets
 
-The server is based on [express](http://expressjs.com/).
+The server is based on [express](https://expressjs.com/).
 
 ## Error handling
 
@@ -49,7 +49,7 @@ auth: process.env.RCA // ''
 
 Modules in pub-server call a global 'opts.log(...)' provided by [logger-emitter](https://github.com/jldec/logger-emitter) to show warnings and errors on the console.
 
-If you set `opts.redis._log = <key-name>`, the same events will be timestamped and logged into a [redis list](http://redis.io/topics/data-types-intro).
+If you set `opts.redis._log = <key-name>`, the same events will be timestamped and logged into a [redis list](https://redis.io/topics/data-types-intro).
 
 ## Session logs
 

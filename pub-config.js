@@ -3,11 +3,11 @@
 
 var opts = module.exports = {
 
-  appUrl: 'http://jldec.github.io/pub-doc',
+  appUrl: 'https://jldec.github.io/pub-doc',
   docTitle: 'pub-server',
   docSubTitle: 'documentation',
-  github: 'http://github.com/jldec/pub-server',
-  copyright: 'Copyright (c) 2015-2016 Jürgen Leschner - github.com/jldec - MIT license',
+  github: 'https://github.com/jldec/pub-server',
+  copyright: 'Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license',
 
   pkgs: [
     'pub-theme-doc',
@@ -22,7 +22,7 @@ var opts = module.exports = {
   ],
 
   outputs: [
-  { path: './out',
+  { path: './docs',
     relPaths: true }
   ],
 
@@ -32,4 +32,4 @@ var opts = module.exports = {
     './.nojekyll'
   ],
 
-}
+};

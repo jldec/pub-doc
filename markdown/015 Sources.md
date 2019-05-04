@@ -29,7 +29,7 @@ Fragments in the same file are separated by a delimiter like
 
     ---- /page-1 ----
 
-For an overview of why we use fragments see the blog post [pub-server Fragments](http://blog.pubblz.com/pub-server-fragments).
+For an overview of why we use fragments see the blog post [pub-server Fragments](https://blog.pubblz.com/pub-server-fragments).
 
 
 ## Handlebars templates

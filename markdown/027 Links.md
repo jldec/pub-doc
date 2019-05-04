@@ -12,7 +12,7 @@ For this reason all links inside the markdown should use a simple "rooted path" 
 
 Generating links for static HTML pages can be challenging, especially if the site is being hosted in a subdirectory on the server or if image links need to be rewritten to use a separate CDN endpoint.
 
-E.g Content inside page1 may refer to page2 using a path like `/path/to/page2` but this will break if the running site lives at a url like `http://me.github.io/website-root/`
+E.g Content inside page1 may refer to page2 using a path like `/path/to/page2` but this will break if the running site lives at a url like `https://me.github.io/website-root/`
 
 There are two approaches to solving this - both are automatable but ugly.
 

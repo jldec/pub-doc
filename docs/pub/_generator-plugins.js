@@ -931,7 +931,7 @@ module.exports = function(generator) {
   });
 
   hb.registerHelper('docTitle', function(frame) {
-    var title = opts.docTitle || opts.pkgName || 'pub-server';
+    var title = opts.docTitle || opts.pkgName || 'Jurgen Leschner';
     var subTitle = opts.docSubTitle || '';
 
     return hb.defaultFragmentHtml('/#doctitle',

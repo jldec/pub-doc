@@ -6,6 +6,8 @@
  * copyright 2015-2019, Jurgen Leschner - github.com/jldec - MIT license
 */
 
+/* global $ */
+
 $(function(){
 
   var style =

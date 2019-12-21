@@ -3,7 +3,7 @@ title: Introduction
 
 # Introduction
 
-[pub-server](https://github.com/jldec/pub-server), or __pub__ for short, is a static site generator and editor. Content is maintained in markdown with the ability of composing output pages from multiple markdown fragments.
+[pub-server](https://github.com/jldec/pub-server), or __pub__ for short, is a static site generator and editor. Content is maintained in markdown, with the ability to compose output pages from multiple markdown fragments.
 
 The following use-cases are supported:
 

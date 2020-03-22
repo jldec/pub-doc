@@ -91,14 +91,14 @@ opts<span class="token punctuation">.</span>pkgs        <span class="token opera
 
 opts<span class="token punctuation">.</span>sources     <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 opts<span class="token punctuation">.</span>staticPaths <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-opts<span class="token punctuation">.</span>outputs     <span class="token operator">=</span> opts<span class="token punctuation">.</span>cloud <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+opts<span class="token punctuation">.</span>outputs     <span class="token operator">=</span> opts<span class="token punctuation">.</span>cloud <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 <p>The syntax for .json is stricter, and it is not possible to include conditional logic, but json is easier to manipulate and re-serialize. No explicit <code>export</code> is required for json files.</p>
 <h5 id="canonical-path-options-format">Canonical path options format</h5>
 <p>Path options (all the keys above) can be either strings or objects and single-values or arrays. Objects are required if one path has additional properties. Arrays are required when there are multiple paths. The following are equivalent.</p>
-<pre><code class="language-js">sources<span class="token punctuation">:</span> <span class="token string">'./markdown'</span>
-sources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'./markdown'</span><span class="token punctuation">]</span>
-sources<span class="token punctuation">:</span> <span class="token punctuation">{</span> path<span class="token punctuation">:</span><span class="token string">'./markdown'</span> <span class="token punctuation">}</span>
-sources<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> path<span class="token punctuation">:</span><span class="token string">'./markdown'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre>
+<pre><code class="language-js">sources<span class="token operator">:</span> <span class="token string">'./markdown'</span>
+sources<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'./markdown'</span><span class="token punctuation">]</span>
+sources<span class="token operator">:</span> <span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token string">'./markdown'</span> <span class="token punctuation">}</span>
+sources<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> path<span class="token operator">:</span><span class="token string">'./markdown'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span></code></pre>
 <h3 id="inspecting-the-config">Inspecting the config</h3>
 <p>To inspect the fully resolved options while pub-server is running, browse to <code>/admin/opts</code>.</p>
 <p><code>pub -C</code> will present a similar result on the command line.</p>
@@ -113,6 +113,6 @@ sources<span class="token punctuation">:</span> <span class="token punctuation">
 <script>window.pubRef = {"href":"/configuration","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

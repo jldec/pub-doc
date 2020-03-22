@@ -76,20 +76,20 @@
 <p>Test the output by running <code>pub -S .</code> and then navigating to <a href="http://localhost:3001/out/">http://localhost:3001/out/</a>.</p>
 <p>The <code>-S &lt;path&gt;</code> option runs pub-server as a static-only web server, emulating GitHub Pages. If you don&#39;t use a custom domain, this will also test the relative links in your html since your site on GitHub Pages will live under <code>https://&lt;id&gt;.github.io/&lt;repo&gt;/...</code>.</p>
 <p>If <a href="./links">links</a> are broken, make sure that your pub-config has an output with <code>relPaths</code> set. e.g</p>
-<pre><code class="language-js">outputs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  path<span class="token punctuation">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>
-  relPaths<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<pre><code class="language-js">outputs<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>
+  relPaths<span class="token operator">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <p>At this point it may also be useful to run <code>git status</code> in the root of your main project to make sure that the <code>out</code> directory is properly ignored. If not, add &#39;/out/&#39; to your <code>.gitignore</code> file.</p>
 <p>When you are ready to publish a new GitHub Pages repo:</p>
-<pre><code class="language-bash"><span class="token function">cd</span> out
+<pre><code class="language-bash"><span class="token builtin class-name">cd</span> out
 <span class="token function">git</span> init
-<span class="token function">git</span> add -A
+<span class="token function">git</span> <span class="token function">add</span> -A
 <span class="token function">git</span> commit -m <span class="token string">'first pub-server output'</span>
 <span class="token function">git</span> branch -m gh-pages</code></pre>
 <p>The last step above just renames the default &quot;master&quot; branch to &quot;gh-pages&quot;.</p>
 <p>Follow the normal process to create a new repo on Gitub and use the suggested commands for intializing that with an existing repo, <em>except</em> when you <code>git push -u</code> the first time, replace &quot;master&quot; with &quot;gh-pages&quot;.</p>
-<pre><code class="language-bash"><span class="token function">git</span> remote add origin https://github.com/<span class="token operator">&lt;</span>id<span class="token operator">></span>/<span class="token operator">&lt;</span>repo<span class="token operator">></span>.git
+<pre><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/<span class="token operator">&lt;</span>id<span class="token operator">></span>/<span class="token operator">&lt;</span>repo<span class="token operator">></span>.git
 <span class="token function">git</span> push -u origin gh-pages</code></pre>
 <h2 id="publishing-updates">Publishing updates</h2>
 <p>Updating the site on GitHub Pages requires no fancy git magic. Simply re-generate the output into the <code>out</code> directory using <code>pub -O</code> and then commit and push the changes to GitHub.</p>
@@ -104,6 +104,6 @@
 <script>window.pubRef = {"href":"/github-pages","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

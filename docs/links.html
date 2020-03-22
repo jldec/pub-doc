@@ -70,9 +70,9 @@
 <li>auto-prefix links with relative paths like &#39;../../path/to/page2&#39;</li>
 </ol>
 <p>The current version of pub-server supports the 2nd approach to auto-prefix links originating in markdown with the correct relative paths. In <code>pub-config</code> this is configured per-output as follows:</p>
-<pre><code class="language-js">outputs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  path<span class="token punctuation">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>   <span class="token comment">// configure output directory</span>
-  relPaths<span class="token punctuation">:</span> <span class="token boolean">true</span>   <span class="token comment">// auto-prefix links with relative paths</span>
+<pre><code class="language-js">outputs<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>   <span class="token comment">// configure output directory</span>
+  relPaths<span class="token operator">:</span> <span class="token boolean">true</span>   <span class="token comment">// auto-prefix links with relative paths</span>
 <span class="token punctuation">}</span></code></pre>
 <p>E.g if a markdown page <code>/posts/year/month/day.html</code> includes an image at <code>/static/images/me.jpg</code>, the generated img src will point to <code>../../../static/images/me.jpg</code>.</p>
 <p>One benefit of using this approach is that the resulting tree of static html files can be hosted at any level. No prior knowledge of the destination directory name is required when the site is generated. This can be helpful for testing or cloning sites.</p>
@@ -93,20 +93,20 @@
 <h2 id="publishing-with-links-to-filesimages-on-another-server">Publishing with links to files/images on another server</h2>
 <p>A site may have links to assets in the local filesystem during development, but those links are then converted to fully qualified links on a different server when the site is published.</p>
 <p>This may be configured using output configuration settings as follows.</p>
-<pre><code class="language-js">outputs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-  path<span class="token punctuation">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>
-  relPaths<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<pre><code class="language-js">outputs<span class="token operator">:</span> <span class="token punctuation">{</span>
+  path<span class="token operator">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>
+  relPaths<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
   <span class="token comment">// don't copy assets under /assets to /out</span>
-  omitRoutes<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'/assets'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  omitRoutes<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/assets'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
   <span class="token comment">// prefix /assets... with the specified url</span>
-  fqImages<span class="token punctuation">:</span> <span class="token punctuation">{</span> route<span class="token punctuation">:</span><span class="token string">'/assets'</span><span class="token punctuation">,</span> url<span class="token punctuation">:</span><span class="token string">'https://assets.example.com'</span> <span class="token punctuation">}</span>
+  fqImages<span class="token operator">:</span> <span class="token punctuation">{</span> route<span class="token operator">:</span><span class="token string">'/assets'</span><span class="token punctuation">,</span> url<span class="token operator">:</span><span class="token string">'https://assets.example.com'</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>These settings will auto-prefix any markdown links matching <code>fqImages.route</code> with the specified <code>fqImages.url</code> during conversion from markdown to HTML.</p>
 <p>The same is made possible for links inside templates by wrapping the hardwired local paths with a <code>{{fixPath &lt;path&gt;}}</code> helper.</p>
 <p>E.g.</p>
-<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{fixPath <span class="token punctuation">'</span>/assets/document-abc.pdf<span class="token punctuation">'</span>}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{fixPath '/assets/document-abc.pdf'}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
 </div>
 </div>
 </div>
@@ -118,6 +118,6 @@
 <script>window.pubRef = {"href":"/links","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

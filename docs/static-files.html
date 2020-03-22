@@ -62,16 +62,16 @@
 <h3 id="serving-static-files-with-pub-server">Serving static files with pub-server</h3>
 <p>When pub-server is running it will serve static files according to <code>opts.staticPaths</code> in <code>pub-config</code>.</p>
 <pre><code class="language-js">opts<span class="token punctuation">.</span>staticPaths <span class="token operator">=</span> <span class="token punctuation">[</span>
-<span class="token punctuation">{</span> path<span class="token punctuation">:</span>   <span class="token string">'./img'</span><span class="token punctuation">,</span>
-  route<span class="token punctuation">:</span>  <span class="token string">'/images'</span><span class="token punctuation">,</span>
-  depth<span class="token punctuation">:</span>  <span class="token number">3</span><span class="token punctuation">,</span>
-  glob<span class="token punctuation">:</span>   <span class="token string">'**/*.{jpg,gif,png}'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span> path<span class="token operator">:</span>   <span class="token string">'./img'</span><span class="token punctuation">,</span>
+  route<span class="token operator">:</span>  <span class="token string">'/images'</span><span class="token punctuation">,</span>
+  depth<span class="token operator">:</span>  <span class="token number">3</span><span class="token punctuation">,</span>
+  glob<span class="token operator">:</span>   <span class="token string">'**/*.{jpg,gif,png}'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-<span class="token punctuation">{</span> path<span class="token punctuation">:</span>   <span class="token string">'./static'</span><span class="token punctuation">,</span>
-  glob<span class="token punctuation">:</span>   <span class="token string">'**/*.{css,js}'</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span> path<span class="token operator">:</span>   <span class="token string">'./static'</span><span class="token punctuation">,</span>
+  glob<span class="token operator">:</span>   <span class="token string">'**/*.{css,js}'</span> <span class="token punctuation">}</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-opts<span class="token punctuation">.</span>injectCss<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">'/css/stylesheet1.css'</span><span class="token punctuation">,</span> <span class="token string">'/css/stylessheet2.css'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
-opts<span class="token punctuation">.</span>injectJs<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">'/js/library1.js'</span><span class="token punctuation">,</span> <span class="token string">'/js/library2.js'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
+opts<span class="token punctuation">.</span>injectCss<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'/css/stylesheet1.css'</span><span class="token punctuation">,</span> <span class="token string">'/css/stylessheet2.css'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+opts<span class="token punctuation">.</span>injectJs<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'/js/library1.js'</span><span class="token punctuation">,</span> <span class="token string">'/js/library2.js'</span> <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
 <p>This config will serve images located up to 3 levels under <code>./img</code> when browsers request urls starting with <code>/images/...</code>.</p>
 <p>The config will also serve all <code>.js</code> and <code>.css</code> files located in &#39;/static/js&#39; and &#39;/static/css&#39;, and explicitly inject 2 of each into the HTML using <code>opts.injectCss</code> and <code>opts.injectJs</code>.</p>
 <p>The <code>.glob</code> <a href="https://github.com/isaacs/minimatch">minimatch</a> pattern is used to test every file for matches.</p>
@@ -86,7 +86,7 @@ opts<span class="token punctuation">.</span>injectJs<span class="token punctuati
 <h3 id="serving-single-files-and-injecting-css-or-js">Serving single files and injecting CSS or JS</h3>
 <p>A <code>staticPaths</code> entry can point either to a directory or to a single file.</p>
 <p>The following will include all files under <code>./static</code> as well as 2 <code>dot</code> files necessary for GitHub Pages.</p>
-<pre><code class="language-js">staticPaths<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token string">'./static'</span><span class="token punctuation">,</span> <span class="token string">'.gitignore'</span><span class="token punctuation">,</span> <span class="token string">'.nojekyll'</span> <span class="token punctuation">]</span></code></pre>
+<pre><code class="language-js">staticPaths<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'./static'</span><span class="token punctuation">,</span> <span class="token string">'.gitignore'</span><span class="token punctuation">,</span> <span class="token string">'.nojekyll'</span> <span class="token punctuation">]</span></code></pre>
 <p>Adding <code>inject:true</code> on single file paths will inject a CSS <code>&lt;link&gt;</code> or JS <code>&lt;script&gt;</code> as in this example from <a href="https://github.com/jldec/pub-theme-brief">pub-theme-brief</a>.</p>
 <p>staticPaths: [
   {path:&#39;./css/brief.css&#39;, route:&#39;/css&#39;, inject:true },
@@ -110,6 +110,6 @@ opts<span class="token punctuation">.</span>injectJs<span class="token punctuati
 <script>window.pubRef = {"href":"/static-files","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

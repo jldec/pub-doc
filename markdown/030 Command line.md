@@ -6,6 +6,9 @@ Specifying dir will direct pub to a different working directory.
 ##### `-h, --help`
 Output usage information on the command line.
 
+##### `-A, --no-open`
+Disable auto-open in browser (mac only).
+
 ##### `-p, --port {port}`
 Override the default server port [3001].
 

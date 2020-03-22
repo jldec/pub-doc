@@ -1,6 +1,6 @@
 {
   "name": "pub-doc",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",
   "dependencies": {},
@@ -9,6 +9,6 @@
     "url": "git://github.com/jldec/pub-doc.git"
   },
   "scripts": {},
-  "author": "jurgen leschner",
+  "author": "Jürgen Leschner",
   "license": "MIT"
 }

@@ -62,7 +62,7 @@
 <p>Many pub-server packages rely on generator plugins, usually to provide specialized handlebars helpers.</p>
 <p>Generator plugins are &quot;universal&quot; npm modules. They run in node.js, as well as in browsers.</p>
 <p>Here is the <code>pub-config</code> entry from <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a>.</p>
-<pre><code class="language-js">generatorPlugins<span class="token punctuation">:</span> <span class="token string">'./plugins/generator-plugin.js'</span><span class="token punctuation">,</span></code></pre>
+<pre><code class="language-js">generatorPlugins<span class="token operator">:</span> <span class="token string">'./plugins/generator-plugin.js'</span><span class="token punctuation">,</span></code></pre>
 <p>The file path follows the node.js <code>require(path)</code> convention of using relative paths for modules which are local files and bare names for installable npm modules.</p>
 <p>Here is the <a href="https://github.com/jldec/pub-theme-doc/blob/master/plugins/generator-plugin.js">plugin</a>:</p>
 <pre><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">generator</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -93,8 +93,8 @@
     <span class="token keyword">var</span> url <span class="token operator">=</span> opts<span class="token punctuation">.</span>github <span class="token operator">||</span> hb<span class="token punctuation">.</span><span class="token function">githubUrl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">return</span> hb<span class="token punctuation">.</span><span class="token function">defaultFragmentHtml</span><span class="token punctuation">(</span><span class="token string">'/#topmenu'</span><span class="token punctuation">,</span>
-      url <span class="token operator">?</span> <span class="token string">'- [_!github lg fw_]('</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">' "github")'</span> <span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-      url <span class="token operator">?</span> <span class="token string">'&lt;ul>&lt;li>&lt;a href="'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'">github&lt;/a>&lt;/li>&lt;/ul>'</span> <span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      url <span class="token operator">?</span> <span class="token string">'- [_!github lg fw_]('</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">' "github")'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      url <span class="token operator">?</span> <span class="token string">'&lt;ul>&lt;li>&lt;a href="'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'">github&lt;/a>&lt;/li>&lt;/ul>'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
       frame<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -120,6 +120,6 @@
 <script>window.pubRef = {"href":"/generator-plugins","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

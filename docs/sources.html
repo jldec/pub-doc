@@ -85,33 +85,33 @@
 
 opts<span class="token punctuation">.</span>sources <span class="token operator">=</span> <span class="token punctuation">[</span>
 
-  <span class="token punctuation">{</span> name<span class="token punctuation">:</span>           <span class="token string">'markdown'</span><span class="token punctuation">,</span>
-    src<span class="token punctuation">:</span>            <span class="token punctuation">(</span>ifLocal <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ghTest<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'pub-src-fs'</span> <span class="token punctuation">:</span>    <span class="token string">'pub-src-github'</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span>           <span class="token punctuation">(</span>ifLocal <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ghTest<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'../&lt;repo>/md'</span>  <span class="token punctuation">:</span> <span class="token string">'/md'</span><span class="token punctuation">,</span>
-    repo<span class="token punctuation">:</span>           <span class="token string">'...'</span><span class="token punctuation">,</span>     <span class="token comment">// for pub-src-github</span>
-    glob<span class="token punctuation">:</span>           <span class="token string">'**/*.md'</span><span class="token punctuation">,</span>
-    depth<span class="token punctuation">:</span>          <span class="token number">4</span><span class="token punctuation">,</span>
-    cache<span class="token punctuation">:</span>          <span class="token punctuation">(</span>ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> <span class="token string">'pub-src-redis'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    leftDelim<span class="token punctuation">:</span>      <span class="token string">'----'</span><span class="token punctuation">,</span>
-    rightDelim<span class="token punctuation">:</span>     <span class="token string">''</span><span class="token punctuation">,</span>
-    headerDelim<span class="token punctuation">:</span>    <span class="token string">'----'</span><span class="token punctuation">,</span>
-    slugify<span class="token punctuation">:</span>        <span class="token punctuation">{</span>allow<span class="token punctuation">:</span><span class="token string">'_'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    writable<span class="token punctuation">:</span>       <span class="token boolean">true</span><span class="token punctuation">,</span>
-    fragmentDelim<span class="token punctuation">:</span>  <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span>           <span class="token string">'markdown'</span><span class="token punctuation">,</span>
+    src<span class="token operator">:</span>            <span class="token punctuation">(</span>ifLocal <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ghTest<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'pub-src-fs'</span> <span class="token operator">:</span>    <span class="token string">'pub-src-github'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span>           <span class="token punctuation">(</span>ifLocal <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>ghTest<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'../&lt;repo>/md'</span>  <span class="token operator">:</span> <span class="token string">'/md'</span><span class="token punctuation">,</span>
+    repo<span class="token operator">:</span>           <span class="token string">'...'</span><span class="token punctuation">,</span>     <span class="token comment">// for pub-src-github</span>
+    glob<span class="token operator">:</span>           <span class="token string">'**/*.md'</span><span class="token punctuation">,</span>
+    depth<span class="token operator">:</span>          <span class="token number">4</span><span class="token punctuation">,</span>
+    cache<span class="token operator">:</span>          <span class="token punctuation">(</span>ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token string">'pub-src-redis'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    leftDelim<span class="token operator">:</span>      <span class="token string">'----'</span><span class="token punctuation">,</span>
+    rightDelim<span class="token operator">:</span>     <span class="token string">''</span><span class="token punctuation">,</span>
+    headerDelim<span class="token operator">:</span>    <span class="token string">'----'</span><span class="token punctuation">,</span>
+    slugify<span class="token operator">:</span>        <span class="token punctuation">{</span>allow<span class="token operator">:</span><span class="token string">'_'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    writable<span class="token operator">:</span>       <span class="token boolean">true</span><span class="token punctuation">,</span>
+    fragmentDelim<span class="token operator">:</span>  <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-  <span class="token punctuation">{</span> name<span class="token punctuation">:</span>           <span class="token string">'templates'</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span>           <span class="token string">'./templates'</span><span class="token punctuation">,</span>
-    compile<span class="token punctuation">:</span>        <span class="token string">'handlebars'</span><span class="token punctuation">,</span>
-    cache<span class="token punctuation">:</span>          ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> <span class="token string">'pub-src-redis'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span>           <span class="token string">'templates'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span>           <span class="token string">'./templates'</span><span class="token punctuation">,</span>
+    compile<span class="token operator">:</span>        <span class="token string">'handlebars'</span><span class="token punctuation">,</span>
+    cache<span class="token operator">:</span>          ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token string">'pub-src-redis'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-  <span class="token punctuation">{</span> name<span class="token punctuation">:</span>           <span class="token string">'schedule'</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span>           <span class="token string">'...'</span><span class="token punctuation">,</span>
-    src<span class="token punctuation">:</span>            <span class="token string">'pub-src-http'</span><span class="token punctuation">,</span>
-    cache<span class="token punctuation">:</span>          <span class="token punctuation">(</span>ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token punctuation">:</span> <span class="token string">'pub-src-redis'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    interval<span class="token punctuation">:</span>       <span class="token string">'20m'</span><span class="token punctuation">,</span>
-    timeout<span class="token punctuation">:</span>        <span class="token string">'10s'</span><span class="token punctuation">,</span>
-    type<span class="token punctuation">:</span>           <span class="token string">'JSON'</span><span class="token punctuation">,</span>
-    log<span class="token punctuation">:</span>            <span class="token boolean">true</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span>           <span class="token string">'schedule'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span>           <span class="token string">'...'</span><span class="token punctuation">,</span>
+    src<span class="token operator">:</span>            <span class="token string">'pub-src-http'</span><span class="token punctuation">,</span>
+    cache<span class="token operator">:</span>          <span class="token punctuation">(</span>ifLocal <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token string">'pub-src-redis'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    interval<span class="token operator">:</span>       <span class="token string">'20m'</span><span class="token punctuation">,</span>
+    timeout<span class="token operator">:</span>        <span class="token string">'10s'</span><span class="token punctuation">,</span>
+    type<span class="token operator">:</span>           <span class="token string">'JSON'</span><span class="token punctuation">,</span>
+    log<span class="token operator">:</span>            <span class="token boolean">true</span> <span class="token punctuation">}</span>
 <span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
 <h4 id="notes">notes:</h4>
 <ul>
@@ -132,6 +132,6 @@ opts<span class="token punctuation">.</span>sources <span class="token operator"
 <script>window.pubRef = {"href":"/sources","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>
 <script src="./pub/pub-ux.js" ></script>
-<!-- Copyright (c) 2015-2019 Jürgen Leschner - github.com/jldec - MIT license -->
+<!-- Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license -->
 </body>
 </html>

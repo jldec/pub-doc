@@ -408,7 +408,7 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
    * Module dependencies.
    */
 
-  
+
 
   /**
    * Short-cuts for global-object checks
@@ -895,9 +895,15 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
     var window = this._window;
 
     var loc = window.location;
+
+    /*
+       when the port is the default http port 80, internet explorer 11
+       returns an empty string for loc.port, so we need to compare loc.port
+       with an empty string if url.port is the default port 80.
+    */
     return loc.protocol === url.protocol &&
       loc.hostname === url.hostname &&
-      loc.port === url.port;
+      (loc.port === url.port || loc.port === '' && url.port === 80);
   };
 
   /**
@@ -1185,6 +1191,8 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
       m = this.regexp.exec(decodeURIComponent(pathname));
 
     if (!m) return false;
+	  
+    delete params[0]
 
     for (var i = 1, len = m.length; i < len; ++i) {
       var key = keys[i - 1];
@@ -1404,7 +1412,7 @@ process.umask = function() { return 0; };
  * jqueryview.js
  *
  * pub-generator plugin for jquery views
- * copyright 2015-2019, Jurgen Leschner - github.com/jldec - MIT license
+ * copyright 2015-2020, Jürgen Leschner - github.com/jldec - MIT license
  *
  * listens for 'nav', 'loaded', and 'updatedText' events
  * emits 'update-view' when content has been replaced
@@ -1531,7 +1539,7 @@ module.exports = function(generator, window) {
  * binds preview doc to generator via jqueryview
  *
  * NOTE: uses history push/pop-state, which doesn't work in older browers
- * copyright 2015-2019, Jurgen Leschner - github.com/jldec - MIT license
+ * copyright 2015-2020, Jürgen Leschner - github.com/jldec - MIT license
  *
 */
 

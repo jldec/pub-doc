@@ -20,5 +20,3 @@ There is no need to compromise on site or page structure just because user conte
 pub-server generates finished HTML by combining markdown fragments with clean and fully-extensible handlebars templates. This provides maximal decoupling of user content from developer code and designer presentation.
 
 The generated output uses npm-installable themes and is fully customizable.
-
-Let's try to make it fun again to build nice clean front-end designs that others can enjoy!

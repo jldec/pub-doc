@@ -57,7 +57,7 @@ Generator plugins are expected to export a single function which is called once 
 
 Plugins can register new helpers using the handlebars instance at `generator.handlebars`.
 
-An interesting example is the generator plugin in [pub-pkg-font-awesome](https://github.com/jldec/pub-pkg-font-awesome) which, besides registering some helpers, also replaces a small part of `generator.renderer` to extend the markdown syntax for emphasis/italics.
+An interesting example is the generator plugin in [pub-pkg-font-awesome](https://github.com/jldec/pub-pkg-font-awesome) which, besides registering some helpers, also adds a plugin to `generator.marked` to extend the markdown syntax for emphasis/italics.
 
 ### Manipulating the generator page model
 

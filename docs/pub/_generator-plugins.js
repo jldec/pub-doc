@@ -833,15 +833,14 @@ function iconHtml(name, xtra) {
 // test for !glyphMapkey class1 class2 class3 ...
 var re = new RegExp('^!(' + u.keys(glyphMap).join('|') + ')(?:\\s+(.+)|$)');
 
-// mutate marked renderer to customize .em html
-var renderer = generator.renderer;
-var renderEm = renderer.em;
-renderer.em = function em(text) {
+// marked plugin renderer function
+function renderEm(text) {
   var match;
   if (match = u.str(text).match(re)) return iconHtml(match[1], match[2]);
-  return renderEm.call(this, text);
+  return false;
 }
 
+generator.marked.use( { renderer: { em:renderEm } } );
 }
 
 },{}],3:[function(require,module,exports){

@@ -51,10 +51,6 @@ Iterates over all pages
 ##### `{{#eachPageWithTemplate <template>}}`
 Iterates over all pages in the site with a specific template
 
-##### `{{#eachLinkIn <fragment>}}`
-Iterates over links inside the markdown fragment - useful for rendering links using custom HTML.
-Returns {href,title,text} (not fully qualified)
-
 
 
 ## Conditional helpers

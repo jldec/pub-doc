@@ -408,7 +408,7 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
    * Module dependencies.
    */
 
-
+  
 
   /**
    * Short-cuts for global-object checks
@@ -887,7 +887,6 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
    * @param {string} href
    * @api public
    */
-
   Page.prototype.sameOrigin = function(href) {
     if(!href || !isLocation) return false;
 
@@ -897,13 +896,16 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
     var loc = window.location;
 
     /*
-       when the port is the default http port 80, internet explorer 11
-       returns an empty string for loc.port, so we need to compare loc.port
-       with an empty string if url.port is the default port 80.
+       When the port is the default http port 80 for http, or 443 for
+       https, internet explorer 11 returns an empty string for loc.port,
+       so we need to compare loc.port with an empty string if url.port
+       is the default port 80 or 443.
+       Also the comparition with `port` is changed from `===` to `==` because
+       `port` can be a string sometimes. This only applies to ie11.
     */
     return loc.protocol === url.protocol &&
       loc.hostname === url.hostname &&
-      (loc.port === url.port || loc.port === '' && url.port === 80);
+      (loc.port === url.port || loc.port === '' && (url.port == 80 || url.port == 443)); // jshint ignore:line
   };
 
   /**
@@ -1151,7 +1153,7 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
   function Route(path, options, page) {
     var _page = this.page = page || globalPage;
     var opts = options || {};
-    opts.strict = opts.strict || page._strict;
+    opts.strict = opts.strict || _page._strict;
     this.path = (path === '*') ? '(.*)' : path;
     this.method = 'GET';
     this.regexp = pathToRegexp_1(this.path, this.keys = [], opts);
@@ -1169,7 +1171,10 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
   Route.prototype.middleware = function(fn) {
     var self = this;
     return function(ctx, next) {
-      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
+      if (self.match(ctx.path, ctx.params)) {
+        ctx.routePath = self.path;
+        return fn(ctx, next);
+      }
       next();
     };
   };
@@ -1191,8 +1196,8 @@ pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
       m = this.regexp.exec(decodeURIComponent(pathname));
 
     if (!m) return false;
-	  
-    delete params[0]
+
+    delete params[0];
 
     for (var i = 1, len = m.length; i < len; ++i) {
       var key = keys[i - 1];

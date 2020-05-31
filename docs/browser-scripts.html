@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,18 +59,21 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/browser-scripts"><h1 id="browser-scripts">Browser Scripts</h1>
+<div data-render-page="/browser-scripts">
+<div data-render-html="/browser-scripts"><h1 id="browser-scripts">Browser Scripts</h1>
 <p>In addition to generating HTML from markdown, <code>pub-server</code> can bundle browser scripts using <a href="https://github.com/substack/node-browserify">browserify</a>.</p>
 <p>This makes it easy to serve front-end scripts which <code>require()</code> npm modules just like node.js server-side code.</p>
 <p>Browser scripts are served live, and also saved to output when a site is generated.</p>
 <p>NOTE: Scripts that do not include other modules or don&#39;t require any transformation, are easier to serve as <a href="static-files">Static Files</a>.</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/browser-scripts","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

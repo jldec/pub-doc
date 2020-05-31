@@ -24,6 +24,7 @@ opts.production     // boolean (process.env.NODE_ENV === 'production')
 opts.port           // override port (process.env.PORT || '3001')
 opts.appUrl         // string - qualify URLs (process.env.APP)
 opts.linkNewWindow  // boolean - add target="_blank" to external links
+opts.allowSpacesInLinks // boolean - allows markdown links with spaces (e.g. form input names with spaces)
 ```
 
 Additional options may be available depending on the active theme e.g for adding links to GitHub and copyright notices.

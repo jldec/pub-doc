@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,7 +59,8 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/configuration"><h1 id="configuration-with-pub-config">Configuration with <code>pub-config</code></h1>
+<div data-render-page="/configuration">
+<div data-render-html="/configuration"><h1 id="configuration-with-pub-config">Configuration with <code>pub-config</code></h1>
 <p>By adding a <code>pub-config</code> file to a directory, you can control how pub-server processes files, rather than depending on defaults or command-line options. The <code>pub-config</code> for this documentation lives <a href="https://github.com/jldec/pub-doc/blob/master/pub-config.js">here</a>.</p>
 <p>A directory with a <code>pub-config</code> can also be packaged as a pub-server package or theme and distributed via npm, making it available for re-use in other projects.</p>
 <h3 id="options-structure">options structure</h3>
@@ -76,7 +78,8 @@
 <pre><code class="language-js">opts<span class="token punctuation">.</span>production     <span class="token comment">// boolean (process.env.NODE_ENV === 'production')</span>
 opts<span class="token punctuation">.</span>port           <span class="token comment">// override port (process.env.PORT || '3001')</span>
 opts<span class="token punctuation">.</span>appUrl         <span class="token comment">// string - qualify URLs (process.env.APP)</span>
-opts<span class="token punctuation">.</span>linkNewWindow  <span class="token comment">// boolean - add target="_blank" to external links</span></code></pre>
+opts<span class="token punctuation">.</span>linkNewWindow  <span class="token comment">// boolean - add target="_blank" to external links</span>
+opts<span class="token punctuation">.</span>allowSpacesInLinks <span class="token comment">// boolean - allows markdown links with spaces (e.g. form input names with spaces)</span></code></pre>
 <p>Additional options may be available depending on the active theme e.g for adding links to GitHub and copyright notices.</p>
 <h3 id="json-or-javascript">JSON or JavaScript</h3>
 <p>You have the choice of using either a .json or .js file for configuration.</p>
@@ -103,12 +106,14 @@ sources<span class="token operator">:</span> <span class="token punctuation">[</
 <p>To inspect the fully resolved options while pub-server is running, browse to <code>/admin/opts</code>.</p>
 <p><code>pub -C</code> will present a similar result on the command line.</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/configuration","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

@@ -12,6 +12,9 @@ outputs: {
   relPaths: true,
   omitRoutes: ['/img'],
   fqImages: { route:'/img', url:'https://techxlab.github.io' }
+  overrideOpts: {
+    appUrl: 'https://www.fmctraining.com',
+    production:true }
 },
 ```
 
@@ -22,3 +25,5 @@ outputs: {
 `omitRoutes` can be use to omit directories which a not required in the output e.g. image directories hosted at a different CDN endpoint.
 
 `fqImages` specifies a route pattern for URLs which will be rewritten e.g. to point to a different host or CDN endpoint.
+
+`overrideOpts` used to specify output-specific opts e.g. to generate production HTML from a non-production environment.

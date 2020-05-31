@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,7 +59,8 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/sources"><h1 id="sources">Sources</h1>
+<div data-render-page="/sources">
+<div data-render-html="/sources"><h1 id="sources">Sources</h1>
 <p><code>pub-server</code> uses content stored in sources to generate your site.</p>
 <p>Most sources are directories in your project or inside a theme package. Source directories are scanned, and new files picked up automatically when the source is read.</p>
 <p>File-system sources can be watched and automatically re-read when changes are detected.</p>
@@ -73,7 +75,8 @@
 <h2 id="markdown-fragments">Markdown fragments</h2>
 <p>pub-server content is maintained in markdown fragments inside files which originate in sources.</p>
 <p>Fragments in the same file are separated by a delimiter like</p>
-<pre><code>---- /page-1 ----</code></pre><p>For an overview of why we use fragments see the blog post <a href="https://blog.pubblz.com/pub-server-fragments">pub-server Fragments</a>.</p>
+<pre><code>---- /page-1 ----</code></pre>
+<p>For an overview of why we use fragments see the blog post <a href="https://blog.pubblz.com/pub-server-fragments">pub-server Fragments</a>.</p>
 <h2 id="handlebars-templates">Handlebars templates</h2>
 <p>Handlebars templates are also just files (or fragments) in sources. For templates, pub-server looks an <code>.hbs</code> extension.</p>
 <p>Templates are the key to separating HTML from content stored in markdown, making the content maintainable by non-developers.</p>
@@ -122,12 +125,14 @@ opts<span class="token punctuation">.</span>sources <span class="token operator"
 <li>setting <code>source.type</code> to something other than &#39;FILE&#39; causes the source to be treated as an opaque JSON object instead of an array containing file objects.</li>
 </ul>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/sources","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

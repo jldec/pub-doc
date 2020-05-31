@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,10 +59,12 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/links"><h1 id="links">Links</h1>
+<div data-render-page="/links">
+<div data-render-html="/links"><h1 id="links">Links</h1>
 <p>For content maintained in markdown, it is important not to have to worry about where that content is going to be hosted, or even which level of the site the content will live on, relative to other pages on the site.</p>
 <p>For this reason all links inside the markdown should use a simple &quot;rooted path&quot; convention both for specifying the urls of pages, and for referencing other pages via links inside the markdown. Rooted paths start with &#39;/&#39; for the index page, and continue in a typical hierarchy below that. E.g.</p>
-<pre><code>/products/vendor-name/product-name</code></pre><h2 id="generating-static-html-with-links">Generating static HTML with links</h2>
+<pre><code>/products/vendor-name/product-name</code></pre>
+<h2 id="generating-static-html-with-links">Generating static HTML with links</h2>
 <p>Generating links for static HTML pages can be challenging, especially if the site is being hosted in a subdirectory on the server or if image links need to be rewritten to use a separate CDN endpoint.</p>
 <p>E.g Content inside page1 may refer to page2 using a path like <code>/path/to/page2</code> but this will break if the running site lives at a url like <code>https://me.github.io/website-root/</code></p>
 <p>There are two approaches to solving this - both are automatable but ugly.</p>
@@ -108,12 +111,14 @@
 <p>E.g.</p>
 <pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{fixPath '/assets/document-abc.pdf'}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/links","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

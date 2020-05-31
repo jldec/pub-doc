@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,10 +59,12 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/how-it-works"><h1 id="how-it-works">How it works</h1>
+<div data-render-page="/how-it-works">
+<div data-render-html="/how-it-works"><h1 id="how-it-works">How it works</h1>
 <h3 id="tldr">tl;dr</h3>
 <p>All text-content lives in <strong>markdown</strong> fragments inside <strong>text</strong> files in one or more <strong>sources</strong>. Fragments in the same file are separated by a delimiter like</p>
-<pre><code>---- /page-1 ----</code></pre><p><strong>pub-generator</strong> compiles markdown fragments into javascript objects which are rendered to HTML by applying <strong>handlebars templates</strong>.</p>
+<pre><code>---- /page-1 ----</code></pre>
+<p><strong>pub-generator</strong> compiles markdown fragments into javascript objects which are rendered to HTML by applying <strong>handlebars templates</strong>.</p>
 <h3 id="sources">sources</h3>
 <p>Sources are directories in your project or inside a theme package. Source directories are scanned, and new files picked up automatically when the source is read.</p>
 <p>Handlebars templates live in files in sources just like markdown text. In fact, templates and markdown may live together in the same source file as long as each is clearly identified e.g. (simplified content)</p>
@@ -71,7 +74,8 @@ page1 markdown text...
 
 ---- /main-layout.hbs ----
 
-&lt;html&gt;{{{renderPage}}}&lt;/html&gt;</code></pre><h3 id="pages-and-fragments">pages and fragments</h3>
+&lt;html&gt;{{{renderPage}}}&lt;/html&gt;</code></pre>
+<h3 id="pages-and-fragments">pages and fragments</h3>
 <p>There are 2 kinds of markdown content:</p>
 <ol>
 <li><strong>pages</strong> have a &quot;normal&quot; page url or href. e.g. <code>/pages/about-us</code></li>
@@ -83,7 +87,8 @@ page1 markdown text...
 <pre><code>---- / ----
 title: Introduction
 
-**pub-server** is a lightweight content management tool for publishing on the web</code></pre><h3 id="templates-and-rendering">templates and rendering</h3>
+**pub-server** is a lightweight content management tool for publishing on the web</code></pre>
+<h3 id="templates-and-rendering">templates and rendering</h3>
 <p>pub-server invokes compiled templates to render pages.</p>
 <p>Page or fragment objects provide the input &quot;context&quot; for handlebars. E.g. If a template contains <code>{{title}}</code>, handlebars will look for a <code>.title</code> property on the current page or fragment object and insert the value of that property into the html output.</p>
 <p>Template evaluation is performed in a nested manner</p>
@@ -103,12 +108,14 @@ title: Introduction
 </ul>
 <p>Page-fragments are automatically attached to pages during compilation. This makes it easy for templates to iterate over the fragments in a page during rendering.</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/how-it-works","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

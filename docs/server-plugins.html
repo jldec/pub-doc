@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,7 +59,8 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/server-plugins"><h1 id="server-plugins">Server Plugins</h1>
+<div data-render-page="/server-plugins">
+<div data-render-html="/server-plugins"><h1 id="server-plugins">Server Plugins</h1>
 <p>Server Plugins are npm modules which extend pub-server&#39;s built-in <a href="web-server-configuration">web server</a>. A working example is <a href="https://github.com/jldec/pub-pkg-google-oauth">pub-pkg-google-oauth</a>.</p>
 <p>Server plugins export a single function which receives an instance of the pubServer object. This function is called once at startup, providing a hook for the plugin to add routes etc.</p>
 <p>For additional control over the sequencing of when routes are added, the server emits <code>init-app-first</code> before mounting pages, statics, and browser scripts and it emits <code>init-app-last</code> after those are mounted.</p>
@@ -72,12 +74,14 @@
 <span class="token punctuation">}</span></code></pre>
 <p><code>pubServer</code> is an eventEmitter.</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/server-plugins","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

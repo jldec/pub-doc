@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,7 +59,8 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/command-line"><h1 id="command-line-options">Command Line Options</h1>
+<div data-render-page="/command-line">
+<div data-render-html="/command-line"><h1 id="command-line-options">Command Line Options</h1>
 <h4 id="usage-pub-options-dir">Usage: <code>pub [options] [dir]</code></h4>
 <p>Specifying dir will direct pub to a different working directory.</p>
 <h5 id="-h---help"><code>-h, --help</code></h5>
@@ -105,12 +107,14 @@ Also supports {dir},{route}.  E.g. <code>pub -s ./static/img,./images</code>.</p
 <h5 id="-b---debug-brk"><code>-B, --debug-brk</code></h5>
 <p>Start node with --debug-brk (also implies -d)</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/command-line","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

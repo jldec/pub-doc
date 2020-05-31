@@ -20,7 +20,8 @@
 </head>
 <body>
 
-<div data-render-layout="main-layout"><header>
+<div data-render-layout="main-layout">
+<header>
 <div id="doctitle"><h1 id="pub-server"><a href="./">pub-server</a></h1>
 <p>documentation</p>
 </div>
@@ -58,7 +59,8 @@
 
 <div id="main" onclick="">
 <div id="content" class="markdown-body">
-<div data-render-page="default"><div data-render-html="/static-files"><h1 id="static-files">Static files</h1>
+<div data-render-page="/static-files">
+<div data-render-html="/static-files"><h1 id="static-files">Static files</h1>
 <h3 id="serving-static-files-with-pub-server">Serving static files with pub-server</h3>
 <p>When pub-server is running it will serve static files according to <code>opts.staticPaths</code> in <code>pub-config</code>.</p>
 <pre><code class="language-js">opts<span class="token punctuation">.</span>staticPaths <span class="token operator">=</span> <span class="token punctuation">[</span>
@@ -100,12 +102,14 @@ opts<span class="token punctuation">.</span>injectJs<span class="token operator"
 <p>This is especially useful for testing static HTML containing relative links. E.g. if <code>./out</code> holds your generated site and you do <code>pub -S .</code> you can navigate to <code>http://localhost:3001/out/</code> to test the site as if it were hosted in a subdirectory on the server.</p>
 <p>See <a href="links">Links</a> for details about configuring pub-server to generate relative links.</p>
 </div>
-</div>
+
+</div><!--page-->
 </div>
 <div id="credit"><p><span class="fa">&#xf004;</span> powered by <a href="https://jldec.github.io/pub-doc/">pub-server</a> and <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a></p>
 </div>
 </div>
-</div>
+
+</div><!--layout-->
 
 <script>window.pubRef = {"href":"/static-files","relPath":"."};</script>
 <script src="./js/jquery-1.12.4.min.js" ></script>

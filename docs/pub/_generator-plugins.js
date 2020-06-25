@@ -1,10 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-require("/Users/jleschner/pub/server/node_modules/pub-theme-doc/plugins/generator-plugin.js")(generator);
-require("/Users/jleschner/pub/server/node_modules/pub-pkg-prism/generator-plugin.js")(generator);
-require("/Users/jleschner/pub/server/node_modules/pub-pkg-font-awesome/generator-plugin.js")(generator);
-require("/Users/jleschner/pub/server/node_modules/pub-pkg-seo/generator-plugin.js")(generator);
-
-},{"/Users/jleschner/pub/server/node_modules/pub-pkg-font-awesome/generator-plugin.js":2,"/Users/jleschner/pub/server/node_modules/pub-pkg-prism/generator-plugin.js":3,"/Users/jleschner/pub/server/node_modules/pub-pkg-seo/generator-plugin.js":5,"/Users/jleschner/pub/server/node_modules/pub-theme-doc/plugins/generator-plugin.js":6}],2:[function(require,module,exports){
 module.exports = function(generator) {
 
 var u = generator.util;
@@ -843,7 +837,7 @@ function renderEm(text) {
 generator.marked.use( { renderer: { em:renderEm } } );
 }
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 /*
  * pub-pkg-prism pub-generator plugin
 */
@@ -860,7 +854,7 @@ module.exports = function(generator) {
   }
 }
 
-},{"./js/prism.js":4}],4:[function(require,module,exports){
+},{"./js/prism.js":3}],3:[function(require,module,exports){
 (function (global){
 /* PrismJS 1.19.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+c+csharp+cpp+clojure+docker+fsharp+go+handlebars+haskell+java+json+lua+makefile+markdown+markup-templating+perl+php+powershell+protobuf+python+r+jsx+tsx+ruby+rust+sql+swift+typescript+wasm+yaml */
@@ -902,7 +896,7 @@ Prism.languages.wasm={comment:[/\(;[\s\S]*?;\)/,{pattern:/;;.*/,greedy:!0}],stri
 !function(e){var a=/[*&][^\s[\]{},]+/,t=/!(?:<[\w\-%#;/?:@&=+$,.!~*'()[\]]+>|(?:[a-zA-Z\d-]*!)?[\w\-%#;/?:@&=+$.~*'()]+)?/,r="(?:"+t.source+"(?:[ \t]+"+a.source+")?|"+a.source+"(?:[ \t]+"+t.source+")?)";function n(e,a){a=(a||"").replace(/m/g,"")+"m";var t="([:\\-,[{]\\s*(?:\\s<<prop>>[ \t]+)?)(?:<<value>>)(?=[ \t]*(?:$|,|]|}|\\s*#))".replace(/<<prop>>/g,r).replace(/<<value>>/g,e);return RegExp(t,a)}e.languages.yaml={scalar:{pattern:RegExp("([\\-:]\\s*(?:\\s<<prop>>[ \t]+)?[|>])[ \t]*(?:((?:\r?\n|\r)[ \t]+)[^\r\\n]+(?:\\2[^\r\\n]+)*)".replace(/<<prop>>/g,r)),lookbehind:!0,alias:"string"},comment:/#.*/,key:{pattern:RegExp("((?:^|[:\\-,[{\r\\n?])[ \t]*(?:<<prop>>[ \t]+)?)[^\r\\n{[\\]},#\\s]+?(?=\\s*:\\s)".replace(/<<prop>>/g,r)),lookbehind:!0,alias:"atrule"},directive:{pattern:/(^[ \t]*)%.+/m,lookbehind:!0,alias:"important"},datetime:{pattern:n("\\d{4}-\\d\\d?-\\d\\d?(?:[tT]|[ \t]+)\\d\\d?:\\d{2}:\\d{2}(?:\\.\\d*)?[ \t]*(?:Z|[-+]\\d\\d?(?::\\d{2})?)?|\\d{4}-\\d{2}-\\d{2}|\\d\\d?:\\d{2}(?::\\d{2}(?:\\.\\d*)?)?"),lookbehind:!0,alias:"number"},boolean:{pattern:n("true|false","i"),lookbehind:!0,alias:"important"},null:{pattern:n("null|~","i"),lookbehind:!0,alias:"important"},string:{pattern:n("(\"|')(?:(?!\\2)[^\\\\\\r\n]|\\\\.)*\\2"),lookbehind:!0,greedy:!0},number:{pattern:n("[+-]?(?:0x[\\da-f]+|0o[0-7]+|(?:\\d+\\.?\\d*|\\.?\\d+)(?:e[+-]?\\d+)?|\\.inf|\\.nan)","i"),lookbehind:!0},tag:t,important:a,punctuation:/---|[:[\]{}\-,|>?]|\.\.\./},e.languages.yml=e.languages.yaml}(Prism);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*eslint no-unused-vars: ["error", { "varsIgnorePattern": "u", "argsIgnorePattern": "frame", }]*/
 
 module.exports = function(generator) {
@@ -923,7 +917,13 @@ module.exports = function(generator) {
 
 };
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+require("/Users/jleschner/pub/doc/node_modules/pub-theme-doc/plugins/generator-plugin.js")(generator);
+require("/Users/jleschner/pub/doc/node_modules/pub-pkg-prism/generator-plugin.js")(generator);
+require("/Users/jleschner/pub/doc/node_modules/pub-pkg-font-awesome/generator-plugin.js")(generator);
+require("/Users/jleschner/pub/doc/node_modules/pub-pkg-seo/generator-plugin.js")(generator);
+
+},{"/Users/jleschner/pub/doc/node_modules/pub-pkg-font-awesome/generator-plugin.js":1,"/Users/jleschner/pub/doc/node_modules/pub-pkg-prism/generator-plugin.js":2,"/Users/jleschner/pub/doc/node_modules/pub-pkg-seo/generator-plugin.js":4,"/Users/jleschner/pub/doc/node_modules/pub-theme-doc/plugins/generator-plugin.js":6}],6:[function(require,module,exports){
 module.exports = function(generator) {
 
   var u = generator.util;
@@ -959,4 +959,4 @@ module.exports = function(generator) {
 
 }
 
-},{}]},{},[1]);
+},{}]},{},[5]);

@@ -2,9 +2,9 @@
 
 ### System requirements
 
-pub-server was developed with node.js or io.js on Mac OSX, so that is the recommended environment to run locally (for now).
+pub-server was developed with node.js on macOS, so that is the recommended environment.
 
-A 1-click installer which eliminates the need to pre-install node.js and use the command-line is coming soon. Fixes for Windows support are also a high priority.
+The generator works under Windows as well, but there are known issues with the editor and the file system watcher on Windows.
 
 
 ### Global install

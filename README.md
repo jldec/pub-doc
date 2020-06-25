@@ -9,21 +9,23 @@ To edit the site locally, clone this repo, then
 npm install
 ```
 
+(`pub-server` is included as a dependency. If you prefer to run pub-server globally, run `npm link pub-server` before running `npm install`.) 
+
 To preview at http://localhost:3001/ while you edit the markdown (using any editor).
 ```sh
-pub
+npm run pub
 ```
 
 The browser preview will auto-reload whenever you save a file.
 
 To generate a new set of html and copy static files into ./docs.
 ```sh
-pub -O
+npm run generate
 ```
 
 To preview the generated static output at http://localhost:3001/
 ```sh
-pub -S docs
+npm test
 ```
 
 The [gh-pages website](https://jldec.github.io/pub-doc) is published from the output in the `./docs` directory.

@@ -3,12 +3,18 @@
   "version": "2.1.0",
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",
-  "dependencies": {},
+  "dependencies": {
+    "pub-server": "^2.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jldec/pub-doc.git"
   },
-  "scripts": {},
+  "scripts": {
+    "pub": "pub",
+    "test": "pub -S docs",
+    "generate": "rm -r docs/* && pub -O"
+  },
   "author": "Jürgen Leschner",
   "license": "MIT"
 }

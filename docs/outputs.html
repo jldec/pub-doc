@@ -67,6 +67,8 @@
 <pre><code class="language-js">outputs<span class="token operator">:</span> <span class="token punctuation">{</span>
   path<span class="token operator">:</span> <span class="token string">'./tgt'</span><span class="token punctuation">,</span>
   relPaths<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  fileMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  outputAliases<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   omitRoutes<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/img'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   fqImages<span class="token operator">:</span> <span class="token punctuation">{</span> route<span class="token operator">:</span><span class="token string">'/img'</span><span class="token punctuation">,</span> url<span class="token operator">:</span><span class="token string">'https://techxlab.github.io'</span> <span class="token punctuation">}</span>
   overrideOpts<span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -78,6 +80,8 @@
 <p><code>omitRoutes</code> can be use to omit directories which a not required in the output e.g. image directories hosted at a different CDN endpoint.</p>
 <p><code>fqImages</code> specifies a route pattern for URLs which will be rewritten e.g. to point to a different host or CDN endpoint.</p>
 <p><code>overrideOpts</code> used to specify output-specific opts e.g. to generate production HTML from a non-production environment.</p>
+<p><code>fileMap</code> output a manifest of pages, statics, and scripts in <code>filemap.json</code>.</p>
+<p><code>outputAliases</code> output html files and filemap entries for aliases using a template called &#39;redirect&#39; (not automatically provided) - useful for redirects on some static hosts like GitHub Pages.</p>
 </div>
 
 </div><!--page-->

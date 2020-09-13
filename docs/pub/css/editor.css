@@ -76,7 +76,12 @@ iframe.preview { width:100%; height:100%; border:none; margin:0; padding:0; }
 
 div.upload { height:100%; padding:4px 8px; }
 div.editorupdates { padding:4px 0; }
-ul.difflist { padding:0; }
-li.difflistitem { list-style:none; cursor:pointer; }
+div.editorupdates h3 { margin-left:4px; }
+ul.difflist { padding:0; margin:0; }
+li.difflistitem { list-style:none; cursor:pointer; border-top:1px solid #fff;}
 li.difflistitem:hover { background-color:#fff; }
-span.diffrevert { padding:2px 5px; border-radius:4px; color:#fff; background-color:#599; font-size: large; font-weight: bold; margin:0 4px; }
+li.difflistitem span { font-size:larger; border-radius:4px; color:#fff; background-color:#999; }
+li.difflistitem span.diffrevert { padding:2px 6px; margin-left:4px; background-color:#999; }
+li.difflistitem span.diffcommit { padding:2px 4px; margin-right:4px; background-color:#599; }
+li.difflistitem span.diffrevert:hover { background-color:#666; }
+li.difflistitem span.diffcommit:hover { background-color:#366; }

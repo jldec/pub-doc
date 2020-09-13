@@ -10,6 +10,8 @@ Usually `pub-config` will contain a single `outputs` configuration with the path
 outputs: {
   path: './tgt',
   relPaths: true,
+  fileMap: true,
+  outputAliases: true,
   omitRoutes: ['/img'],
   fqImages: { route:'/img', url:'https://techxlab.github.io' }
   overrideOpts: {
@@ -27,3 +29,7 @@ outputs: {
 `fqImages` specifies a route pattern for URLs which will be rewritten e.g. to point to a different host or CDN endpoint.
 
 `overrideOpts` used to specify output-specific opts e.g. to generate production HTML from a non-production environment.
+
+`fileMap` output a manifest of pages, statics, and scripts in `filemap.json`.
+
+`outputAliases` output html files and filemap entries for aliases using a template called 'redirect' (not automatically provided) - useful for redirects on some static hosts like GitHub Pages.

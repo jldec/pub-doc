@@ -65,13 +65,15 @@
 <p>Server plugins export a single function which receives an instance of the pubServer object. This function is called once at startup, providing a hook for the plugin to add routes etc.</p>
 <p>For additional control over the sequencing of when routes are added, the server emits <code>init-app-first</code> before mounting pages, statics, and browser scripts and it emits <code>init-app-last</code> after those are mounted.</p>
 <p>Server plugins are configured in pub-config</p>
-<pre><code class="language-js">opts<span class="token punctuation">.</span>serverPlugins <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'./my-server-plugin'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="language-js">opts<span class="token punctuation">.</span>serverPlugins <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token string">'./my-server-plugin'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
 <h2 id="the-pubserver-object">The pubServer object</h2>
 <pre><code class="language-js"><span class="token punctuation">{</span>
   opts<span class="token operator">:</span>          <span class="token comment">// global opts object (including opts.log)</span>
   app<span class="token operator">:</span>           <span class="token comment">// express app</span>
   generator<span class="token operator">:</span>     <span class="token comment">// pub-generator</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p><code>pubServer</code> is an eventEmitter.</p>
 </div>
 

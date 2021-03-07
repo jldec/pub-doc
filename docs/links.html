@@ -63,7 +63,8 @@
 <div data-render-html="/links"><h1 id="links">Links</h1>
 <p>For content maintained in markdown, it is important not to have to worry about where that content is going to be hosted, or even which level of the site the content will live on, relative to other pages on the site.</p>
 <p>For this reason all links inside the markdown should use a simple &quot;rooted path&quot; convention both for specifying the urls of pages, and for referencing other pages via links inside the markdown. Rooted paths start with &#39;/&#39; for the index page, and continue in a typical hierarchy below that. E.g.</p>
-<pre><code>/products/vendor-name/product-name</code></pre>
+<pre><code>/products/vendor-name/product-name
+</code></pre>
 <h2 id="generating-static-html-with-links">Generating static HTML with links</h2>
 <p>Generating links for static HTML pages can be challenging, especially if the site is being hosted in a subdirectory on the server or if image links need to be rewritten to use a separate CDN endpoint.</p>
 <p>E.g Content inside page1 may refer to page2 using a path like <code>/path/to/page2</code> but this will break if the running site lives at a url like <code>https://me.github.io/website-root/</code></p>
@@ -76,7 +77,8 @@
 <pre><code class="language-js">outputs<span class="token operator">:</span> <span class="token punctuation">{</span>
   path<span class="token operator">:</span> <span class="token string">'./out'</span><span class="token punctuation">,</span>   <span class="token comment">// configure output directory</span>
   relPaths<span class="token operator">:</span> <span class="token boolean">true</span>   <span class="token comment">// auto-prefix links with relative paths</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>E.g if a markdown page <code>/posts/year/month/day.html</code> includes an image at <code>/static/images/me.jpg</code>, the generated img src will point to <code>../../../static/images/me.jpg</code>.</p>
 <p>One benefit of using this approach is that the resulting tree of static html files can be hosted at any level. No prior knowledge of the destination directory name is required when the site is generated. This can be helpful for testing or cloning sites.</p>
 <h2 id="links-to-directories-and-trailing-">Links to directories and trailing /</h2>
@@ -91,7 +93,8 @@
 <p><em>NOTE: Using the trailing &#39;/&#39; also affects the way browsers interpret relative links, since they effectively add another level to the hierarchy. E.g. a link like &#39;./pagename&#39; will mean something different if it occurs inside the HTML of a page at &#39;/directory&#39; vs. a page at &#39;/directory/&#39;.  When pub-server is generating output with <code>relPaths</code>, it will figure out the right level for either case.</em></p>
 <h2 id="links-in-templates">Links in templates</h2>
 <p>Templates may include links to CSS stylesheets etc. For these to receive the same treatment as links in markdown the <code>{{relPath}}</code> helper should be used in front of the link e.g.</p>
-<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{relPath}}/img/favicon.ico<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/x-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{relPath}}/img/favicon.ico<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/x-icon<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</code></pre>
 <p>If the output has been configured with <code>relPaths:true</code>, this <code>{{relPath}}</code> helper will insert a &#39;./&#39; or the correct number of levels of <code>../../</code> etc.</p>
 <h2 id="publishing-with-links-to-filesimages-on-another-server">Publishing with links to files/images on another server</h2>
 <p>A site may have links to assets in the local filesystem during development, but those links are then converted to fully qualified links on a different server when the site is published.</p>
@@ -105,11 +108,13 @@
 
   <span class="token comment">// prefix /assets... with the specified url</span>
   fqImages<span class="token operator">:</span> <span class="token punctuation">{</span> route<span class="token operator">:</span><span class="token string">'/assets'</span><span class="token punctuation">,</span> url<span class="token operator">:</span><span class="token string">'https://assets.example.com'</span> <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>These settings will auto-prefix any markdown links matching <code>fqImages.route</code> with the specified <code>fqImages.url</code> during conversion from markdown to HTML.</p>
 <p>The same is made possible for links inside templates by wrapping the hardwired local paths with a <code>{{fixPath &lt;path&gt;}}</code> helper.</p>
 <p>E.g.</p>
-<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{fixPath '/assets/document-abc.pdf'}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{fixPath '/assets/document-abc.pdf'}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Download<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+</code></pre>
 </div>
 
 </div><!--page-->

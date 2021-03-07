@@ -87,30 +87,35 @@
     saveUninitialized<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     rolling<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     secret<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">SSC</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>resisOpts <span class="token operator">&amp;&amp;</span> u<span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    cookie<span class="token operator">:</span> <span class="token punctuation">{</span> secure<span class="token operator">:</span>opts<span class="token punctuation">.</span>production<span class="token punctuation">,</span> maxAge<span class="token operator">:</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span></code></pre>
+    cookie<span class="token operator">:</span> <span class="token punctuation">{</span> secure<span class="token operator">:</span>opts<span class="token punctuation">.</span>production<span class="token punctuation">,</span> maxAge<span class="token operator">:</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">1000</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+</code></pre>
 <p>Session storage with with redis is enabled by setting <code>opts.redis</code> in <code>pub-config</code> and, if necessary, configuring the redis credentials via environment variables. See <a href="https://github.com/NodeRedis/node-redis#options-object-properties">node-redis</a> for configuration options.</p>
 <pre><code class="language-js">opts<span class="token punctuation">.</span>redis <span class="token operator">=</span>
 <span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token string">'pub-test-auth:'</span><span class="token punctuation">,</span> <span class="token comment">// prefix all keys (sessions and logs)</span>
   _sess<span class="token operator">:</span>  <span class="token string">'session:'</span><span class="token punctuation">,</span>       <span class="token comment">// capture sessions using keys &lt;prefix>&lt;_sess>&lt;sid></span>
-  _log<span class="token operator">:</span>   <span class="token string">'log:'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>         <span class="token comment">// capture system logs using list key &lt;prefix>&lt;_log> (see below)</span></code></pre>
+  _log<span class="token operator">:</span>   <span class="token string">'log:'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>         <span class="token comment">// capture system logs using list key &lt;prefix>&lt;_log> (see below)</span>
+</code></pre>
 <p>To configure redis using environment variables:</p>
 <pre><code class="language-sh">export RCH=localhost # host: default = localhost, can also be configured via opts.redis.host
 export RCP=6379      # port: default = 6379, can also be configured via opts.redis.port
-export RCA=xxx       # auth_pass: default blank, can only be configured via environment</code></pre>
+export RCA=xxx       # auth_pass: default blank, can only be configured via environment
+</code></pre>
 <h2 id="system-logs">System logs</h2>
 <p>Modules in pub-server call a global &#39;opts.log(...)&#39; provided by <a href="https://github.com/jldec/logger-emitter">logger-emitter</a> to show warnings and errors on the console.</p>
 <p>If you set <code>opts.redis._log = &lt;key-name&gt;</code>, the same events will be timestamped and logged into a <a href="https://redis.io/topics/data-types-intro">redis list</a>.</p>
 <h2 id="session-logs">Session logs</h2>
 <p>pub-server can record clicks and other events generated in the browser via the <code>/server/log/&lt;path&gt;?&lt;params&gt;</code> api.</p>
 <p>HTTP requests sent to this endpoint will stored as objects containing the request path and parameters in the <code>session.log</code> and, if redis is enabled, automatically persisted with the session. E.g.</p>
-<pre><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/server/log'</span> <span class="token operator">+</span> location<span class="token punctuation">.</span>pathname <span class="token operator">+</span> <span class="token punctuation">(</span>location<span class="token punctuation">.</span>search <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> method<span class="token operator">:</span><span class="token string">'POST'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/server/log'</span> <span class="token operator">+</span> location<span class="token punctuation">.</span>pathname <span class="token operator">+</span> <span class="token punctuation">(</span>location<span class="token punctuation">.</span>search <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> method<span class="token operator">:</span><span class="token string">'POST'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>The default <code>/server/log</code> route can be configured by setting &#39;opts.session.logRequestPath&#39;.</p>
 <h2 id="configuring-session-based-access-control">Configuring session-based access control</h2>
 <p>Access control is configured on the server using environment variables <code>ACL_READ</code>, <code>ACL_EDIT</code>, <code>ACL_ADMIN</code>. These restrict read access to all pages (except those with <code>access:everyone</code>), edit access, and admin access respectively. Editors can also read, and admins can edit and read.</p>
 <p>Each of the 3 ACLs contains a comma-separated list of user ids (typically email addresses). These are matched with the <code>session.user</code> at run time, which is established by an authentication plugin such as <a href="https://github.com/jldec/pub-pkg-google-oauth">pub-pkg-google-oauth</a>.</p>
 <p>E.g. To grant yourself admin rights, and 3 other users read access:</p>
 <pre><code class="language-sh">export ACL_ADMIN={your-email}
-export ACL_READ={email-1},{email-2},{email-3}</code></pre>
+export ACL_READ={email-1},{email-2},{email-3}
+</code></pre>
 </div>
 
 </div><!--page-->

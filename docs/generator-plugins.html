@@ -64,7 +64,8 @@
 <p>Many pub-server packages rely on generator plugins, usually to provide specialized handlebars helpers.</p>
 <p>Generator plugins are &quot;universal&quot; npm modules. They run in node.js, as well as in browsers.</p>
 <p>Here is the <code>pub-config</code> entry from <a href="https://github.com/jldec/pub-theme-doc">pub-theme-doc</a>.</p>
-<pre><code class="language-js">generatorPlugins<span class="token operator">:</span> <span class="token string">'./plugins/generator-plugin.js'</span><span class="token punctuation">,</span></code></pre>
+<pre><code class="language-js">generatorPlugins<span class="token operator">:</span> <span class="token string">'./plugins/generator-plugin.js'</span><span class="token punctuation">,</span>
+</code></pre>
 <p>The file path follows the node.js <code>require(path)</code> convention of using relative paths for modules which are local files and bare names for installable npm modules.</p>
 <p>Here is the <a href="https://github.com/jldec/pub-theme-doc/blob/master/plugins/generator-plugin.js">plugin</a>:</p>
 <pre><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">generator</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -100,7 +101,8 @@
       frame<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>Generator plugins are expected to export a single function which is called once at startup. The function is passed a single <code>generator</code> parameter which is an instance of <code>pub-generator</code>.</p>
 <h3 id="registering-helpers">Registering helpers</h3>
 <p>Plugins can register new helpers using the handlebars instance at <code>generator.handlebars</code>.</p>
@@ -109,7 +111,8 @@
 <p>Plugins which need to manipulate the page content model after it has been loaded from source, can do so by hooking into a &#39;pages-ready&#39; event emitted by the generator after loading source files and parsing all the markdown and templates</p>
 <pre><code class="language-js">generator<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'pages-ready'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">decoratePages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>Note that the <code>pages-ready</code> event will be triggered each time the server reloads sources e.g. when watching directories for changes.</p>
 </div>
 

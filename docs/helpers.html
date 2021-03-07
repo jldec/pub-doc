@@ -175,7 +175,8 @@ If no input is provided the current date/time is used.</p>
 Useful for variadic helpers E.g.</p>
 <pre><code class="language-js">hb<span class="token punctuation">.</span><span class="token function">registerHelper</span><span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">d<span class="token punctuation">,</span> frame</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> u<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token function">hbp</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'d mmmm, yyyy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>When <code>{{date}}</code> is used without additional parameters, handlebars will pass the frame
 context to the helper function as the first parameter. Using hbp() detects this.</p>
 <p><code>hb</code> is a reference to generator.handlebars.</p>

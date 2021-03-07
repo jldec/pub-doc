@@ -71,10 +71,12 @@
     <span class="token string">'pub-pkg-prism'</span><span class="token punctuation">,</span>
     <span class="token string">'pub-pkg-font-awesome'</span><span class="token punctuation">,</span>
     <span class="token string">'pub-pkg-seo'</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+</code></pre>
 <p>For extra parameters, use <code>{ path:&quot;name&quot;, ... }</code> instead of name strings like the example above.  </p>
 <p>To use packages which are not included with <code>pub-server</code>, they first have to be installed.</p>
-<pre><code>npm install --save &lt;pkg-name&gt;</code></pre>
+<pre><code>npm install --save &lt;pkg-name&gt;
+</code></pre>
 <p>This will add a reference to the latest released version of the package into the <code>dependencies</code> list of your <code>package.json</code>.</p>
 <h4 id="resolving-paths">Resolving paths</h4>
 <p>When you run <code>pub</code> from the command line, it looks for a <code>pub-config</code> file and invokes the <a href="https://github.com/jldec/pub-resolve-opts">pub-resolve-opts</a> module.</p>

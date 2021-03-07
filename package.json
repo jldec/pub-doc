@@ -4,7 +4,7 @@
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",
   "dependencies": {
-    "pub-server": "^2.7.4"
+    "pub-server": "^2.7.5"
   },
   "repository": {
     "type": "git",

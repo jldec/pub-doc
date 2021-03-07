@@ -7,7 +7,7 @@ var opts = module.exports = {
   docTitle: 'pub-server',
   docSubTitle: 'documentation',
   github: 'https://github.com/jldec/pub-server',
-  copyright: 'Copyright (c) 2015-2020 Jürgen Leschner - github.com/jldec - MIT license',
+  copyright: 'Copyright (c) 2015-2021 Jürgen Leschner - github.com/jldec - MIT license',
 
   pkgs: [
     'pub-theme-doc',

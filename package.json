@@ -1,10 +1,10 @@
 {
   "name": "pub-doc",
-  "version": "2.5.0",
+  "version": "2.9.0",
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",
   "dependencies": {
-    "pub-server": "^2.8.1"
+    "pub-server": "^2.9.0"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "scripts": {
     "pub": "pub",
     "test": "pub -S docs",
-    "generate": "rm -r docs/* && pub -O"
+    "generate": "rm -r docs/* ; pub -O"
   },
   "author": "Jürgen Leschner",
   "license": "MIT"

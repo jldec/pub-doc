@@ -1,10 +1,10 @@
 {
   "name": "pub-doc",
-  "version": "2.9.0",
+  "version": "2.10.0",
   "description": "source for pub-server docs - not a published npm module",
   "main": "pub-config.js",
   "dependencies": {
-    "pub-server": "^2.9.0"
+    "pub-server": "^2.10.0"
   },
   "repository": {
     "type": "git",

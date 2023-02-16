@@ -87,3 +87,4 @@ opts.sources = [
 - `leftDelim`, `rightDelim`, `headerDelim` customizes fragment header syntax.
 - setting `source.compile` to 'handlebars'` forces all fragments to be treated as handlebars templates, irrespective of extensions.
 - setting `source.type` to something other than 'FILE' causes the source to be treated as an opaque JSON object instead of an array containing file objects.
+- setting `source.defaultExt` to `.htm` or `.html` will create hrefs with one of those extensions, instead of no extension.
